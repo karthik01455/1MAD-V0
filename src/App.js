@@ -1,16 +1,33 @@
 import React from 'react';
-import Navbar from './components/navBar';
-import PoNotesHeader from './components/poNotesHeader';
-import PoNotesBody from './components/poNotesBody';
+import {Route, Routes} from 'react-router-dom';
 import './App.css';
+
+import HomeTest from './components/routes/home';
+import AnnouncementsTest from './components/routes/announcements';
+import InformationRadiatorTest from './components/routes/informationRadiator';
+import OurTeamsTest from './components/routes/ourTeams';
+import PoNotesContainer from './components/routes/poNotes';
+import RefMaterialsTest from './components/routes/refMaterials';
+import TimelinesTest from './components/routes/timelines';
+
 
 function App() {
   return (
-    <div>
-      <div> <Navbar /> </div>
-      <div> <PoNotesHeader /> </div>
-      <div> <PoNotesBody /> </div>
-    </div>
+
+    <Routes>
+      <Route exact path = '/' element={<HomeTest/>}/>
+      <Route exact path = '/announcements' element={<AnnouncementsTest/>}/>
+      <Route exact path = '/informationRadiator' element={<InformationRadiatorTest/>}/>
+      <Route exact path = '/ourTeams' element={<OurTeamsTest/>}/>
+      <Route exact path = '/poNotes' element={<PoNotesContainer/>}/>
+      <Route exact path = '/referenceMaterial' element={<RefMaterialsTest/>}/>
+      <Route exact path = '/timeline' element={<TimelinesTest/>}/>
+    </Routes>
+    // <div>
+    //   <div> <Navbar /> </div>
+    //   <div> <PoNotesHeader /> </div>
+    //   <div> <PoNotesBody /> </div>
+    // </div>
   );
 }
 
