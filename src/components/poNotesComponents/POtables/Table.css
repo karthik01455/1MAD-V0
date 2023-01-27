@@ -1,0 +1,43 @@
+.table
+{
+    
+    flex-direction: column;
+/* Auto layout 
+
+  
+*/
+align-items: center;
+padding: 16px 10px;
+gap: 8px;
+
+/*position: absolute;*/
+left: 8.47%;
+right: 64.65%;
+top: 28.94%;
+bottom: 9.35%;
+
+
+background: #EEF2F5;
+/* Neutrals/Lightest */
+
+
+}
+.divide
+{
+    padding-left: 100px;
+    padding-left: 100px;
+    
+}
+.css-swbtwh-MuiPaper-root-MuiTableContainer-root {
+    background: #EEF2F5;
+}
+
+
+.css-zow5z4-MuiGrid-root {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.nav
+{
+    display: inline-block;
+}

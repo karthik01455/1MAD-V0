@@ -1,0 +1,18 @@
+.align
+{
+    display: inline-flex;
+    flex-direction:row ;
+}
+.textProperty
+{
+    font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+
+left: 28.42%;
+right: 34.88%;
+top: 32.93%;
+bottom: 28.05%;
+padding: 5px;
+}
