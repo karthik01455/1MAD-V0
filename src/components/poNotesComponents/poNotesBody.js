@@ -5,6 +5,7 @@ import Container from '@mui/material/Container';
 import ActionItemsTable from './POtables/ActionItemsTable';
 import KeyDecisionTable from './POtables/KeyDecisionsTable';
 import AgendaTable from './POtables/AgendaTable';
+import GridArea from './gridArea'
 
 const PoNotesBody = () => {
   return (
@@ -12,9 +13,7 @@ const PoNotesBody = () => {
       <CssBaseline />
       <Container maxWidth="xl">
         <Box sx={{ bgcolor: '#E6EEF2', height: '83.5vh', flexDirection: 'row' }}>
-          <Box > <ActionItemsTable/></Box>
-          <Box ><KeyDecisionTable/></Box>
-          <Box ><AgendaTable/> </Box>
+          <GridArea/>
         </Box>
       </Container>
     </React.Fragment>

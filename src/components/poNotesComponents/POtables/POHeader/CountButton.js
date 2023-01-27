@@ -6,10 +6,10 @@ import { IconButton } from '@mui/material';
 // or
 import './ButtonProperties.css'
 
-export default function CountButton() {
+export default function CountButton(props) {
   return (
-    <div>
-      <IconButton  class='countButtonProperty' style={{maxWidth: '60px', maxHeight: '30px', minWidth: '30px', minHeight: '30px', borderRadius:'30px',backgroundColor:'blue',display:'inline-block',color:'#FFFFFF', border:'none',hover:'none'}}>99000</IconButton>
-    </div>
+    <Box sx={{paddingLeft:'6px'}}>
+      <IconButton  style={{maxWidth: '60px', maxHeight: '18px', minWidth: '18px', minHeight: '18px', borderRadius:'30px',backgroundColor:'blue',color:'#FFFFFF', border:'none',hover:'none', display: 'flex',fontSize:'12px'}}>99</IconButton>
+    </Box>
   )
 }

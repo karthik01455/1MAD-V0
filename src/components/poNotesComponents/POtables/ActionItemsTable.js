@@ -9,12 +9,12 @@ import {
   } from '@mui/material'
   import React from 'react'
   import ActionItemsHeader from './POHeader/ActionItemsHeader'
-  import './Table.css'
+  import Box from '@mui/material/Box';
   export default  function ActionItemsTable ()  {
     return (
-      <div >
-        <div class='layout'>
-      <TableContainer  sx={{ maxHeight: '500px' }} component={Paper}  >
+      <Box sx={{width:'600px'}}>
+       
+      <TableContainer  sx={{ background:'#EEF2F5',height:'700px',maxHeight: '1000px', Width:'500px',width:'100%', flexGrow: -5}} component={Paper}  >
         <Table stickyHeader aria-label='simple table'>
           <TableHead>
             <TableRow align='center'>
@@ -32,8 +32,8 @@ import {
           </TableBody>
         </Table>
       </TableContainer>
-      </div>
-      </div>
+      </Box>
+    
     )
   }
   
@@ -93,6 +93,30 @@ import {
       email: 'sivashnyov6@hexun.com',
       gender: 'Female',
       ip_address: '253.192.252.49'
+    },
+    {
+      id: 8,
+      first_name: 'Elden',
+      last_name: 'Chaucer',
+      email: 'echaucer7@mozilla.com',
+      gender: 'Agender',
+      ip_address: '60.70.120.186'
+    },
+    {
+      id: 9,
+      first_name: 'Sholom',
+      last_name: 'Deetch',
+      email: 'sdeetch8@so-net.ne.jp',
+      gender: 'Female',
+      ip_address: '218.36.95.147'
+    },
+    {
+      id: 10,
+      first_name: 'Genovera',
+      last_name: 'Colby',
+      email: 'gcolby9@dagondesign.com',
+      gender: 'Non-binary',
+      ip_address: '199.140.221.248'
     },
     {
       id: 8,
