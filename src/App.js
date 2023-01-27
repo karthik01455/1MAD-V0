@@ -23,11 +23,6 @@ function App() {
       <Route exact path = '/referenceMaterial' element={<RefMaterialsTest/>}/>
       <Route exact path = '/timeline' element={<TimelinesTest/>}/>
     </Routes>
-    // <div>
-    //   <div> <Navbar /> </div>
-    //   <div> <PoNotesHeader /> </div>
-    //   <div> <PoNotesBody /> </div>
-    // </div>
   );
 }
 
