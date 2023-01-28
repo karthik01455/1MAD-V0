@@ -1,22 +1,16 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
+
+import { AppBar, Box, Toolbar, IconButton, Typography, Menu, Container, Avatar, Tooltip, MenuItem } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import Logo from '../../images/agileLogo.png';
+import Logo from '../../assets/images/agileLogo.png';
 
 const pages = ['Home', 'PO Notes', 'Our Teams', 'Timelines & Roadmaps', 'Announcements', 'Information Radiators', 'Reference Material'];
+const routes = ['/', '/po-notes', '/our-teams', '/timelines-roadmaps', '/announcements', '/information-radiators', '/reference-material'];
 const settings = ['Profile', 'Account Settings'];
 
-const Navbar = () => {
+function Navbar() {
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -26,14 +20,15 @@ const Navbar = () => {
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
-
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+
+  const location = useLocation();
+  console.log(location.pathname);
 
   return (
     <AppBar position="static" style={{ background: 'transparent', boxShadow: 'none' }}>
@@ -51,20 +46,10 @@ const Navbar = () => {
           <Typography
             variant="h6"
             noWrap
-            sx={{
-              marginLeft: 2,
-              flexGrow: 3,
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontWeight: 700,
-              letterSpacing: '.025rem',
-              color: '#3D3D3D;',
-              textDecoration: 'none',
-            }}
+            sx={{ marginLeft: 2, flexGrow: 3, mr: 2, display: { xs: 'none', md: 'flex' }, fontWeight: 700, letterSpacing: '.025rem', color: '#3D3D3D;', textDecoration: 'none' }}
           >
             My Agile Board
           </Typography>
-
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -78,54 +63,32 @@ const Navbar = () => {
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
+              anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
               keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
+              transformOrigin={{ vertical: 'top', horizontal: 'left' }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
+              sx={{ display: { xs: 'block', md: 'none' } }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu} sx={{
-                  ':hover': {
-                    bgcolor: 'white',
-                    color: '#2258F5',
-                  },
-                  my: 2, color: '#3D3D3D', display: 'block'
-                }}>
-                  <Typography textAlign="center">{page}</Typography>
+              {pages.map((page, index) => (
+                <MenuItem key={page} onClick={handleCloseNavMenu} sx={{ ':hover': { bgcolor: 'white', color: '#2258F5' }, my: 2, color: '#3D3D3D', display: 'block' }}>
+                  <Link style={{ textDecoration: 'none' }} to={routes[index]}> <Typography sx={{ fontSize: 16.5, ':hover': { color: '#2258F5' }, my: 2, color: '#3D3D3D', display: 'flex' }}> {page} </Typography> </Link>
                 </MenuItem>
               ))}
-
             </Menu>
           </Box>
-
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
+          <Box sx={{ marginRight: 5, flexGrow: 2, display: { xs: 'none', md: 'flex' } }}>
+            {pages.map((page, index) => (
+              <Box
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{
-                  ':hover': {
-                    bgcolor: 'white',
-                    color: '#2258F5'
-                  },
-                  my: 2, color: '#3D3D3D', display: 'flex'
-                }}
+                sx={{ flexGrow: 1 }}
               >
-                {page}
-              </Button>
+                <Link style={{ textDecoration: 'none' }} to={routes[index]}> <Typography sx={{ fontSize: 16.5, ':hover': { textDecoration: 'underline', textUnderlineOffset: '8px', color: '#2258F5' }, my: 2, color: '#3D3D3D', display: 'flex' }}> {page} </Typography> </Link>
+              </Box>
             ))}
-          </Box>
 
+          </Box>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
@@ -136,15 +99,9 @@ const Navbar = () => {
               sx={{ mt: '45px' }}
               id="menu-appbar"
               anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
+              anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
               keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
+              transformOrigin={{ vertical: 'top', horizontal: 'right' }}
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
@@ -160,4 +117,5 @@ const Navbar = () => {
     </AppBar >
   );
 }
+
 export default Navbar;
