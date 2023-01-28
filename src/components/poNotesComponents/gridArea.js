@@ -6,9 +6,9 @@ import KeyDecisionTable from './POtables/KeyDecisionsTable';
 import AgendaTable from './POtables/AgendaTable';
 export default function GridArea() {
   return (
-    <Box style={{ width: '100%' }}>
-      <Grid container spacing={3} columns={20}>
-        <Grid item xs={1}>
+   
+      <Grid container spacing={5} columns={20}>
+      <Grid item xs={1}>
         </Grid>
         <Grid sx={{
           p: 6,
@@ -37,6 +37,6 @@ export default function GridArea() {
         <Grid item xs={1}>
         </Grid>
       </Grid>
-    </Box>
+    
   );
 }
