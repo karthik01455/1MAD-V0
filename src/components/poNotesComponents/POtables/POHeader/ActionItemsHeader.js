@@ -1,13 +1,22 @@
-
 import React from 'react'
-import CountButton from './CountButton'
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
 import { Typography } from '@mui/material';
-export default function CountOfItems(props) {
-  const countOfItems=props.countOfItems;
+import Box from '@mui/material/Box';
+import PropTypes from 'prop-types';
+import Model from '../Model'
+
+export default function ActionItemsHeader(props) {
+  const { countOfItems } = props;
+  const heading = 'Action Items';
+  const definition = ' are the tasks that the Product Owner(PO) has to do in order to unblock the team, and can be linked to an issue in the Project management tool such as Jira.'
+  const accessibiltyInformation = 'PO is the owner of this section only PO can add or edit these entries.'
   return (
-    <Box sx={{ display: 'flex',
-    justifyContent: 'center'}} ><Typography style={{fontFamily:'Roboto', fontSize:'18px',lineHeight:'20px'}} sx={{color: "#FFFFFF"}}>ACTION-ITEMS ({countOfItems}) </Typography><CountButton>i</CountButton> </Box>
+    <Box sx={{
+      display: 'flex',
+      justifyContent: 'center'
+    }} ><Typography style={{ fontFamily: 'Roboto', fontSize: '18px', lineHeight: '20px' }} sx={{ color: "#FFFFFF", paddingRight: '5px' }}>ACTION ITEMS ({countOfItems})</Typography> <Model heading={heading} definition={definition} accessibiltyInformation={accessibiltyInformation} /> </Box>
   )
+}
+
+ActionItemsHeader.propTypes = {
+  countOfItems: PropTypes.number.isRequired
 }
