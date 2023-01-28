@@ -10,6 +10,7 @@ import {
   import React from 'react'
   import KeyDecisionsHeader from './POHeader/KeyDecisionsHeader';
   import Box from '@mui/material/Box';
+import CardLayout from '../../Cards/CardLayout'
   export default  function KeyDecisionTable ()  {
     return (
       <Box sx={{width:'600px'}}>
@@ -22,13 +23,9 @@ import {
             </TableRow>
           </TableHead>
           <TableBody >
-            {tableData.map(row => (
-              <TableRow
-                key={row.id}
-                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-                <TableCell style={{borderBottom:"none"}} sx={{background:'#EEF2F5'}}align='center'>{row.email}</TableCell>
-              </TableRow>
-            ))}
+           <TableRow>
+           <CardLayout colour='#40A737' chckBox={false}/>
+           </TableRow>
           </TableBody>
         </Table>
       </TableContainer>
