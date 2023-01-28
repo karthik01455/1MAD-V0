@@ -7,6 +7,6 @@ export default function KeyDecisionsHeader(props) {
   const countOfItems=props.countOfItems;
   return (
     <Box sx={{ display: 'flex',
-    justifyContent: 'center'}} ><Typography style={{fontFamily:'Roboto', fontSize:'18px',lineHeight:'16px'}} sx={{color: "#FFFFFF"}}>KEY-DECISION</Typography><CountButton countOfItems={countOfItems}></CountButton> </Box>
+    justifyContent: 'center'}} ><Typography style={{fontFamily:'Roboto', fontSize:'18px',lineHeight:'20px'}} sx={{color: "#FFFFFF"}}>KEY-DECISIONS ({countOfItems}) </Typography><CountButton>i</CountButton> </Box>
   )
 }
