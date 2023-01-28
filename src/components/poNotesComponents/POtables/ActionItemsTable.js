@@ -10,10 +10,10 @@ import {
   import React from 'react'
   import ActionItemsHeader from './POHeader/ActionItemsHeader'
   import Box from '@mui/material/Box';
+import CardLayout from '../../Cards/CardLayout'
   export default  function ActionItemsTable ()  {
     return (
       <Box sx={{width:'600px'}}>
-       
       <TableContainer  sx={{ background:'#EEF2F5',height:'700px',maxHeight: '1000px', Width:'500px',width:'100%', flexGrow: -5}} component={Paper}  >
         <Table stickyHeader aria-label='simple table'>
           <TableHead>
@@ -22,13 +22,9 @@ import {
             </TableRow>
           </TableHead>
           <TableBody >
-            {tableData.map(row => (
-              <TableRow
-                key={row.id}
-                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-                <TableCell style={{borderBottom:"none"}} sx={{background:'#EEF2F5'}}align='center'>{row.email}</TableCell>
-              </TableRow>
-            ))}
+            <TableRow> 
+            <CardLayout colour={'#FF2473'} chckBox={true}/>
+            </TableRow>
           </TableBody>
         </Table>
       </TableContainer>

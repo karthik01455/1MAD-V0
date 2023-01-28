@@ -10,6 +10,7 @@ import {
   import React from 'react'
   import AgendaHeader from './POHeader/AgendaHeader'
   import Box from '@mui/material/Box';
+import CardLayout from '../../Cards/CardLayout'
   
   export default  function AgendaTable ()  {
     return (
@@ -23,13 +24,9 @@ import {
             </TableRow>
           </TableHead>
           <TableBody >
-            {tableData.map(row => (
-              <TableRow
-                key={row.id}
-                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-                <TableCell style={{borderBottom:"none"}} sx={{background:'#EEF2F5'}}align='center'>{row.email}</TableCell>
+              <TableRow>
+              <CardLayout colour='#FEA946' chckBox={true}/>
               </TableRow>
-            ))}
           </TableBody>
         </Table>
       </TableContainer>
