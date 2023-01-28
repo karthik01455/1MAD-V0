@@ -18,7 +18,7 @@ import {
         <Table stickyHeader aria-label='simple table'>
           <TableHead>
             <TableRow align='center'>
-              <TableCell align='center' sx={{ backgroundColor: '#051C2C' , borderradius: '0px' ,color: '#FFFFFF'}}><KeyDecisionsHeader/></TableCell>
+              <TableCell align='center' sx={{ backgroundColor: '#051C2C' , borderradius: '0px' ,color: '#FFFFFF'}}><KeyDecisionsHeader countOfItems={tableData.length}/></TableCell>
             </TableRow>
           </TableHead>
           <TableBody >
